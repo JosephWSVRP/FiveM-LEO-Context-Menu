@@ -3,14 +3,14 @@
 -- ==================
 Config = {
     MenuPosition = "left", -- Options: "left" or "right"
-    MenuKey = "G", -- Keybind to open the menu
+    MenuKey = "G", -- Keybind to open the menu https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
     RequireEmergencyVehicle = true, -- Set to false to allow menu anywhere
 
     Weapons = {
     Rifle = {
-        label = "~r~~h~Service Rifle",
-        hash = GetHashKey("WEAPON_CARBINERIFLE"),
-        attachments = {
+        label = "~r~~h~Service Rifle", 
+        hash = GetHashKey("WEAPON_CARBINERIFLE"), -- https://docs.fivem.net/docs/game-references/weapon-models/
+        attachments = {  -- https://wiki.rage.mp/wiki/Weapons_Components
             GetHashKey("COMPONENT_AT_SCOPE_MEDIUM"),
             GetHashKey("COMPONENT_AT_AR_AFGRIP"),
             GetHashKey("COMPONENT_AT_AR_FLSH")
@@ -18,36 +18,27 @@ Config = {
         },
     Shotgun = {
         label = "~o~~h~Beanbag Shotgun",
-        hash = GetHashKey("WEAPON_PUMPSHOTGUN"),
-        attachments = {
+        hash = GetHashKey("WEAPON_PUMPSHOTGUN"), -- https://docs.fivem.net/docs/game-references/weapon-models/
+        attachments = {  -- https://wiki.rage.mp/wiki/Weapons_Components
             GetHashKey("COMPONENT_AT_AR_FLSH")
         }
     },
     FireExtinguisher = {
         label = "~y~~h~Fire Extinguisher",
-        hash = GetHashKey("WEAPON_FIREEXTINGUISHER"),
-        attachments = {}
+        hash = GetHashKey("WEAPON_FIREEXTINGUISHER"), -- https://docs.fivem.net/docs/game-references/weapon-models/
+        attachments = {} -- https://wiki.rage.mp/wiki/Weapons_Components
     }
     },
     Vests = {
         { label = "~b~~h~Police Light Patrol Vest", model = 84, texture = 1 },
-        { label = "~b~~h~Police High Risk Plate Carrier", model = 81, texture = 1 },
-        { label = "~y~~h~Sheriff Light Ballistic Vest", model = 84, texture = 3 },
-        { label = "~y~~h~Sheriff High Risk Plate Carrier", model = 81, texture = 2 },
-        { label = "~p~~h~Trooper Light Ballistic Vest", model = 84, texture = 4 },
-        { label = "~p~~h~Trooper High Risk Plate Carrier", model = 81, texture = 3 },
-        { label = "~g~~h~High Visibility Vest", model = 22, texture = 6 }
     },
     Radios = {
         { label = "~h~Chest Radio", model = 77 },
-        { label = "~h~Left Shoulder Radio", model = 75 },
-        { label = "~h~Over Left Shoulder Radio", model = 73 },
-        { label = "~h~Over Right Shoulder Radio", model = 71 }
     }
 }
 
 local menuPool = NativeUI.CreatePool()
-local mainMenu = NativeUI.CreateMenu("ERRP Menu", "~o~~h~Context Menu")
+local mainMenu = NativeUI.CreateMenu("LEO Menu", "~o~~h~Context Menu")
 menuPool:Add(mainMenu)
 
 -- Set menu position
@@ -144,7 +135,7 @@ end, false)
 -- The rest of the script remains unchanged...
 
 local menuPool = NativeUI.CreatePool()
-local mainMenu = NativeUI.CreateMenu("ERRP Menu", "~o~~h~Context Menu")
+local mainMenu = NativeUI.CreateMenu("LEO Menu", "~o~~h~Context Menu")
 menuPool:Add(mainMenu)
 
 function ToggleWeapon(weaponHash)
